@@ -70,7 +70,7 @@ Overarching requirements for the entire `<body>` are:
 
 Structure of `<body>` as follows:
 
-`
+```
 body
 |- nav
 |   |- ul and whatever else
@@ -79,7 +79,7 @@ body
 |   |- section
 |   |- etc
 
-`
+```
 ### `<nav>` structure and notes
 
 The `<nav>` needs to fullfill several requirements and they are as follows:
@@ -91,7 +91,7 @@ The `<nav>` needs to fullfill several requirements and they are as follows:
     
 Structure for `<nav>` as follows:   
 
-`
+```
 nav#navbar
 |- header.nav-hdr>{MEC 550 Maze Solving Robot Documentation}
 |- ul.nav-li
@@ -100,7 +100,7 @@ nav#navbar
 |   |- (li.nav-wrp>a.nav-link)*6 
 
 
-`
+```
 
 ### General notes for the main content
 
@@ -113,7 +113,7 @@ Main content has a set of general requirements
 
 So the structure of `main` is as follows:
 
-`
+```
 main#main-doc
 |- section.main-section.ctr-intro
 |   |- img
@@ -126,7 +126,7 @@ main#main-doc
 |- section.main-section.ctr-doc
 </main>
 
-`
+```
 
 #### Introduction structure and notes
 
@@ -139,13 +139,13 @@ The introduction has a couple of things and also needs to fulfill a couple of re
     
 Structure for the *Introduction* section are as follows:
     
- `
+```
 section.main-section.ctr-intro
 |- header.sec-hdr>{Introduction}
 |- img
 |- p
 
-`
+```
 
 #### Requirements structure and notes
 
@@ -156,7 +156,7 @@ The requirements section has the following:
 
 Structure for the *Requirements* section are as follows:
 
-`
+```
 
 section.main-section.ctr-req
 |- header.sec-hdr>{Requirements}
@@ -166,7 +166,7 @@ section.main-section.ctr-req
 |   |- (li.wrp-ol>{requirementx})*999
 |- p
 
-`
+```
 ### Bill of Materials structure and notes
 
 There's not much to the *Bill of Materials* section but it should include:
@@ -178,7 +178,7 @@ There's not much to the *Bill of Materials* section but it should include:
 
 Structure for the *Bill of Materials* section is as follows:
 
-`
+```
 section.main-section.ctr-bom
 |- header.sec-hdr>{Bill of Materials}
 |- p>{text here}
@@ -186,7 +186,7 @@ section.main-section.ctr-bom
 |   |-tr.rw-hdr.rw-1>(th.tbl-hdr>{row element$})*6
     |-(tr.rw-hdr.rw-$>(td.tbl-col>{table entry})*6)*5
 
-`
+```
 
 ### Code Overview structure and notes
 
@@ -207,7 +207,7 @@ There's quite a bit that needs to happen here and it should include the followin
 
 Structure for the *Code Overview*
 
-`
+```
 
 section.main-section.ctr-ovrvw
 |- header.sec-hdr>{Code Overview}
@@ -229,4 +229,4 @@ section.main-section.ctr-ovrvw
 
 
 
-`
+```
