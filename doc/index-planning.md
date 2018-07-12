@@ -64,9 +64,9 @@ The `<body>` element should branch to two sections: `<nav>` and `<main>`. On lar
 
 Overarching requirements for the entire `<body>` are:
 
-- at least 10 `p` elements
-- at least 5 `li` elements
-- at least 1 `@media` query
+[] at least 10 `p` elements
+[] at least 5 `li` elements
+[] at least 1 `@media` query
 
 Structure of `<body>` as follows:
 
@@ -106,10 +106,10 @@ nav#navbar
 
 Main content has a set of general requirements
 
-- Every section should have it's own `<section>` tag with the class `.main-section`
-- Every section should start with a `<header>`
-- `<main>` should have and id of `id=main-doc`
-- There should be at least 5 `<code>` elements used in `main` 
+[] Every section should have it's own `<section>` tag with the class `.main-section`
+[] Every section should start with a `<header>`
+[] `<main>` should have and id of `id=main-doc`
+[] There should be at least 5 `<code>` elements used in `main` 
 
 So the structure of `main` is as follows:
 
@@ -135,7 +135,7 @@ The introduction has a couple of things and also needs to fulfill a couple of re
 - a picture
 - paragraph 1 for describing the project, the purpose of the page, and the content of this page
     - probably going to end up being two `<p>` elements or even a list, it's fairly flexible
--
+- needs to link to the github repo at some point
     
 Structure for the *Introduction* section are as follows:
     
@@ -144,6 +144,7 @@ section.main-section.ctr-intro
 |- header.sec-hdr>{Introduction}
 |- img
 |- p
+|   |-a:link>{Github Repo}
 
 ```
 
@@ -176,12 +177,20 @@ There's not much to the *Bill of Materials* section but it should include:
     - Said table should include model numbers and what system it's in
 - A general systems/ subsystems overview
 
+Also in order to get the expanding table to work on mobile, it's going to need the following:
+
+- Table needs to be removed from the flow of the page but still manipulatable
+- When the table is shown, it should overlap the current section but not the button
+- The button should have two toggle-states, expand, hide and should have accompanying icons
+
+
 Structure for the *Bill of Materials* section is as follows:
 
 ```
 section.main-section.ctr-bom
 |- header.sec-hdr>{Bill of Materials}
 |- p>{text here}
+|- button>.btn
 |- table.tbl-bom
 |   |-tr.rw-hdr.rw-1>(th.tbl-hdr>{row element$})*6
     |-(tr.rw-hdr.rw-$>(td.tbl-col>{table entry})*6)*5
@@ -205,7 +214,7 @@ There's quite a bit that needs to happen here and it should include the followin
 - There should be an overview of how the robot navigations through the maze
 - There should be an overview of how all of these systems fit together software-wise
 
-Structure for the *Code Overview*
+Structure for the *Code Overview* is as follows:
 
 ```
 
@@ -213,20 +222,44 @@ section.main-section.ctr-ovrvw
 |- header.sec-hdr>{Code Overview}
 |- p>{Description of how everything should fit together and the various subsystems that need software}
 |- img>{needs a flow chart of the subsystems}
-|
-|- h3.sub-hdr{Maze Navigation Overview}
-|- p>{maze navigation}
+|- p>{maze navigation overview}
 |
 |- h3.sub-hdr>{IR sensor calibration}
 |- p>{text about the calibration}
 |- code>{code should probably follow but this might need rethinking}
+|- img>{image of the calibration spreadsheet or at least the console output}
+|- code>{code of the end IR sensor reading function thing}
 |
 |- h3.sub-hdr>{Wall Avoidance System}
 |- img>{Image of control system block diagram}
 |- p>{control systems thing}
 |- code>{code snippets for it or just a big bit of psuedocode}
+|
+|- h3.sub-hdr>{Color Sensor Overview}
+|- p>{text about color sensors}
+|- code>{pseudocode for making a color sensor reading}
+|
+|- h3.sub-hdr>{Overall Robot Code Structure}
+|- img>{flow chart of the code logic}
+|- p> {words about code flow and the switches and cases and etc}
+|- code<{pseudocode}
 
+```
+### Supporting Documentation structure and notes
 
+There's not too much that needs to be added here but it should include the following:
 
+- Spec sheets for the IR sensor, the ultrasonic sensor, the chip for the color sensor, the motor shield
+- Links to component distributors
+- Link to the Arduino docs
+- Link to the Adafruit Motor Shield library docs
+
+```
+section.main-section.ctr-ovrvw
+|- header.sec-hdr>{Supporting Documentation}
+|- p>{What's included in this section}
+|-ul.ctr-ul
+|   |-li>{thing 1}
+|   |-(li>{thing$})*3
 
 ```
