@@ -43,6 +43,8 @@ doc = documentation
 rw = row
 ovrvw = overview
 sub = sub-section
+hfix = hardware fixes
+sfix = softwarefixes
 
 `
     
@@ -189,10 +191,10 @@ Structure for the *Bill of Materials* section is as follows:
 section.main-section.ctr-bom
 |- header.sec-hdr>{Bill of Materials}
 |- p>{text here}
-|- button>.btn
+|- button.btn
 |- table.tbl-bom
 |   |-tr.rw-hdr.rw-1>(th.tbl-hdr>{row element$})*6
-|   |-(tr.rw-hdr.rw-$>(td.tbl-col>{table entry})*6)*5
+    |-(tr.rw-hdr.rw-$>(td.tbl-col>{table entry})*6)*5
 
 ```
 
@@ -232,7 +234,7 @@ section.main-section.ctr-ovrvw
 |- h3.sub-hdr>{Wall Avoidance System}
 |- img>{Image of control system block diagram}
 |- p>{control systems thing}
-|- code>{code snippets for it or just a big bit of psuedocode}
+|- code>{code snippets for it or just a big bit of pseudocode}
 |
 |- h3.sub-hdr>{Color Sensor Overview}
 |- p>{text about color sensors}
@@ -244,6 +246,26 @@ section.main-section.ctr-ovrvw
 |- code<{pseudocode}
 
 ```
+### Improvements and Fixes structure and notes
+
+Some requirements for this section:
+
+- Should contain both hardware and software improvements
+- Should have at least 2 or 3 paragraph elements
+- Should be a two column layout on larger screens
+
+```
+section.main-section.ctr-fix
+|- header.sec-hdr>{Improvements and Fixes}
+|- div.ctr-hfix
+|   |- h3.sub-hdr>{Hardware fixes}
+|   |- p>{text}
+|- div.ctr-sfix
+|   |- h3.sub-hdr>{Software fixes}
+|   |- p>{text}
+
+```
+
 ### Supporting Documentation structure and notes
 
 There's not too much that needs to be added here but it should include the following:
