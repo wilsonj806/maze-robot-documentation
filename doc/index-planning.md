@@ -22,6 +22,7 @@ Requirements done by FCC and [Link here](https://learn.freecodecamp.org/responsi
 This document contains notes on how to structure this project and why. It will also include Emmet shortcuts that can be copied and pasted into the actual `index.html` file when you make it
     
 ## Class Naming Convention
+
 `
 nav= navbar although Bootstrap uses it
 wrp = wrapper
@@ -124,7 +125,6 @@ main#main-doc
 |- section.main-section.ctr-code
 |- section.main-section.ctr-fixes
 |- section.main-section.ctr-doc
-</main>
 
 ```
 
