@@ -100,7 +100,6 @@ nav#navbar
 |       |- a.nav-link
 |   |- (li.nav-wrp>a.nav-link)*6 
 
-
 ```
 
 ### General notes for the main content
@@ -193,7 +192,7 @@ section.main-section.ctr-bom
 |- button>.btn
 |- table.tbl-bom
 |   |-tr.rw-hdr.rw-1>(th.tbl-hdr>{row element$})*6
-    |-(tr.rw-hdr.rw-$>(td.tbl-col>{table entry})*6)*5
+|   |-(tr.rw-hdr.rw-$>(td.tbl-col>{table entry})*6)*5
 
 ```
 
@@ -255,7 +254,7 @@ There's not too much that needs to be added here but it should include the follo
 - Link to the Adafruit Motor Shield library docs
 
 ```
-section.main-section.ctr-ovrvw
+section.main-section.ctr-doc
 |- header.sec-hdr>{Supporting Documentation}
 |- p>{What's included in this section}
 |-ul.ctr-ul
