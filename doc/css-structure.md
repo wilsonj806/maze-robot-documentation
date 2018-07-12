@@ -83,20 +83,23 @@ table
 
 ## Structure planning
 
-So something like this?
+So if we're using Sass as our CSS preprocessor, our file flow might look like the below, where we're largely importing a bunch of partials and compiling them all in one `.scss` file to compile.
 
 ```
-main.scss
-|
-|- base.scss
-|- content.scss
-|- viewports.scss
+-scss/
+|- main.scss
+|- _config.scss
+|- _content.scss
+|- _viewports.scss
+|- _modules/
+|   |- _tables.scss
+|   |- _buttons.scss
 ```
 Where the files do the following:
 
 - `base.scss` includes styling for `p` elements, `h*` elements, fonts, colors, normalizing, etc
 - `content.scss` includes the `nav` styling, general container styling, table styling and etc
 -  `viewports.scss` includes `@media` queries
-
+- The `modules` folder stores the styling for modules like tables or buttons
 
 
