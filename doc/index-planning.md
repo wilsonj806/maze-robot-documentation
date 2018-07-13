@@ -25,45 +25,25 @@ This document contains notes on how to structure this project and why. It will a
 
 ```
 nav = navbar although Bootstrap uses it
-
 wrp = wrapper
-
 ctr= container
-
 qte = quote
-
 btn or butn = button
-
 ftr = feature
-
 ol = ordered list 
-
 usli = unstyled list
-
 scn = screen
-
 dpy = display
-
 mob = mobile
-
 hdr = header
-
 tbl = table
-
 req = requirements
-
 bom = bill of materials
-
 doc = documentation
-
 rw = row
-
 ovrvw = overview
-
 sub = sub-section
-
 hfix = hardware fixes
-
 sfix = softwarefixes
 ```
     
