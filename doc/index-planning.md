@@ -45,7 +45,6 @@ ovrvw = overview
 sub = sub-section
 hfix = hardware fixes
 sfix = softwarefixes
-
 `
     
 ## Theory Crafting
@@ -81,7 +80,6 @@ body
 |   |- section
 |   |- section
 |   |- etc
-
 ```
 ### `<nav>` structure and notes
 
@@ -101,7 +99,6 @@ nav#navbar
 |   |-li.nav-wrp
 |       |- a.nav-link
 |   |- (li.nav-wrp>a.nav-link)*6 
-
 ```
 
 ### General notes for the main content
@@ -126,7 +123,6 @@ main#main-doc
 |- section.main-section.ctr-code
 |- section.main-section.ctr-fixes
 |- section.main-section.ctr-doc
-
 ```
 
 #### Introduction structure and notes
@@ -146,7 +142,6 @@ section.main-section.ctr-intro
 |- img
 |- p
 |   |-a:link>{Github Repo}
-
 ```
 
 #### Requirements structure and notes
@@ -167,7 +162,6 @@ section.main-section.ctr-req
 |   |-li>{requirement1}
 |   |- (li.wrp-ol>{requirementx})*999
 |- p
-
 ```
 ### Bill of Materials structure and notes
 
@@ -195,7 +189,6 @@ section.main-section.ctr-bom
 |- table.tbl-bom
 |   |-tr.rw-hdr.rw-1>(th.tbl-hdr>{row element$})*6
     |-(tr.rw-hdr.rw-$>(td.tbl-col>{table entry})*6)*5
-
 ```
 
 ### Code Overview structure and notes
@@ -218,7 +211,6 @@ There's quite a bit that needs to happen here and it should include the followin
 Structure for the *Code Overview* is as follows:
 
 ```
-
 section.main-section.ctr-ovrvw
 |- header.sec-hdr>{Code Overview}
 |- p>{Description of how everything should fit together and the various subsystems that need software}
@@ -244,7 +236,6 @@ section.main-section.ctr-ovrvw
 |- img>{flow chart of the code logic}
 |- p> {words about code flow and the switches and cases and etc}
 |- code<{pseudocode}
-
 ```
 ### Improvements and Fixes structure and notes
 
@@ -263,7 +254,6 @@ section.main-section.ctr-fix
 |- div.ctr-sfix
 |   |- h3.sub-hdr>{Software fixes}
 |   |- p>{text}
-
 ```
 
 ### Supporting Documentation structure and notes
@@ -282,5 +272,4 @@ section.main-section.ctr-doc
 |-ul.ctr-ul
 |   |-li>{thing 1}
 |   |-(li>{thing$})*3
-
 ```
