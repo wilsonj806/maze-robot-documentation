@@ -1,12 +1,13 @@
 # Technical Documentation Page Project
 
-## [Live Site]()
+## Links
+[Live Site](https://wilsonj806.github.io/maze-robot-documentation/)
 
-## [Codepen Link]()
+[Codepen Link](https://codepen.io/wilsonj806/details/qybPzb/)
 
-## [Mobile Mockup](https://www.figma.com/proto/KrRYLzgiYv2D0HMjukzrt1T7/Tech-Documentation-Page?scaling=min-zoom&node-id=4%3A9)
+[Mobile Mockup](https://www.figma.com/proto/KrRYLzgiYv2D0HMjukzrt1T7/Tech-Documentation-Page?scaling=min-zoom&node-id=4%3A9)
 
-## [Laptop Mockup](https://www.figma.com/proto/KrRYLzgiYv2D0HMjukzrt1T7/Tech-Documentation-Page?node-id=23%3A102&scaling=min-zoom)
+[Laptop Mockup](https://www.figma.com/proto/KrRYLzgiYv2D0HMjukzrt1T7/Tech-Documentation-Page?node-id=23%3A102&scaling=min-zoom)
     
 ## Versioning:
 
@@ -22,7 +23,7 @@ Requirements done by FCC and [Link here](https://learn.freecodecamp.org/responsi
 
 ## Personal Requirements:
 
-- Use CSS Variables at least once
+- Use CSS/ Sass Variables at least once
 - Use simple colors and play with transparency
 - Functional over pretty
 - Should have a toggle button that shows an element (via animation, like it should slide into view on clicking the button)
@@ -33,6 +34,7 @@ Requirements done by FCC and [Link here](https://learn.freecodecamp.org/responsi
     - i.e if you show pieces of code, style them to be like Markdown code blocks
 - Try integrating Sass into the workflow
 - Use `@import` to import fonts into the CSS/ SCSS file instead of doing an html link
+- Don't set any element's height unless it's a physical object and unless it's the nav
     
 ## Requirements Overview
 
