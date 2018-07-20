@@ -1,0 +1,405 @@
+<!-- 
+Technical Documentation Page
+Test Bed
+Version: 0.95.0- alpha
+Date Started: 07/12/2018
+Last Updated: 07/19/2018
+Requirements:
+https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page/
+-->
+
+<!-- 
+Current Status:
+1. Passes FCC tests
+2. About 75% of the content is written up
+3. Needs styling and sizing for mobile/ screens/ print
+-->
+
+
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <title>Maze Solving Robot Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+<!-- Scripts and other libraries here -->
+<!--for Bootstrap 4.1 CSS modules -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> 
+
+<!-- For Font Awesome Icons -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="<sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtV></sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtV>lRW3tvkXWZh58N9jp" crossorigin="anonymous"> 
+    
+<link rel="stylesheet" href="scss/main.css" type="text/css">
+    
+</head>
+
+<body>
+    <nav class="navbar-expand-lg" id="navbar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-col" aria-controls="nav-col" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+        <div class="navbar navbar-light bg-light collapse ctr-nav" id="nav-col">
+            <header class="nav-hdr">Maze Solving Robot Documentation</header>
+            <ul class="nav-li">
+                <li class="nav-wrp"><a href="#Introduction_To_The_Project" class="nav-link">Introduction To the Project</a></li>
+                <li class="nav-wrp"><a href="#Requirements" class="nav-link">Requirements</a></li>
+                <li class="nav-wrp"><a href="#Bill_of_Materials" class="nav-link">Bill of Materials</a></li>
+                <li class="nav-wrp"><a href="#Code_Overview" class="nav-link">Code Overview</a></li>
+                <li class="nav-wrp"><a href="#Improvements_and_Fixes" class="nav-link">Improvements and Fixes</a></li>
+                <li class="nav-wrp"><a href="#Supporting_Documentation" class="nav-link">Supporting Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main id="main-doc">
+    
+        <section class="main-section ctr-intro" id="Introduction_To_The_Project">
+            <header class="sec-hdr">Introduction To The Project</header>
+            <img class="img-intro" src="img/intro-img.jpg" alt="intro image">
+            
+            <p>
+                This page is dedicated to documenting the maze solving robot class project that me and two other friends did. Within this page will be a navigation bar that will be accessible via an expanding icon or be visible to your left. Outside of that, the page will go through the following topics:
+            </p>
+            <ul class="ctr-ul">
+                <li class="wrp-li">The requirements for the project and their justification</li>
+                <li class="wrp-li">The materials used and acquired</li>
+                <li class="wrp-li">An overview of the Arduino code</li>
+                <li class="wrp-li">The possible improvements that can be made</li>
+                <li class="wrp-li">Any supporting documentation that may help</li>
+            </ul>
+            <p>
+                The primary challenges, at least for my group, was a multitidue of things. The biggest challenge was putting all of our limited electronics experience together and then an even bigger challenge to translate that into the program that tied all of the systems together. So hopefully this extended write-up will provide helpful for anyone who finds themself making a project similar to this.
+            </p>
+        </section>
+        
+        <section class="main-section ctr-req" id="Requirements">
+            <header class="sec-hdr">Requirements</header>
+            <p class="p-minline">
+             The requirements for the project were pretty straightforwards and were as follows:
+            </p>
+            <ol class="ctr-ol">
+                <li class="wrp-ol">The robot will be able to traverse a corridor without bumping into walls</li>
+                <li class="wrp-ol">The robot will be able to detect red and green that will signify the start and end of the maze</li>
+                <li class="wrp-ol">The robot must be able to navigate to the end of a maze</li>
+                <li class="wrp-ol">The robot must retrieve a ball at the end of the maze and bring it back to the start</li>
+                <li class="wrp-ol">The robot must fit inside of the maze walls</li>
+                <li class="wrp-ol">The robot cannot traverse over the walls of the maze to get to the end</li>
+                <li class="wrp-ol">The robot must cost less than $250 to produce</li>
+            </ol>
+            <p>
+                These requirements were made so that we would have to put some thought into the design and execution of the robot. The size and cost constraints meant we need to consider how to fit the instrumentation and motors onto the robot as well as how to exceed the allocated budget. On the other hand the color-detection and ball grabbing were meant to simplify our implementation of the robot by keeping our goals very straightforward. The rest of the requirements either sought to eliminate any cheesy solutions or as an addition challenge for the group.
+            </p>
+        </section>
+        
+        <section class="main-section ctr-bom" id="Bill_of_Materials">
+            
+            <header class="sec-hdr">Bill of Materials</header>
+            
+            <p>
+                The Bill of Materials section will outline the numerous electrical parts and related components that were acquired to complete this project. The table will include a model number and a vendor when available as well.
+            </p>
+            
+            <button class="btn btn-primary btn-bom" type="button" data-toggle="collapse" data-target="#tbl-expand" aria-controls="tbl-expand" aria-expanded="false" aria-label="Toggle BoM Expand"><i class="fas fa-angle-left"></i></button>
+
+<!-- There's probably going to be 2 instances of the table because I don't know enough JS to make it appear on laptops -->            
+            <div class="wrp-tbl">                        
+                <table class="tbl-bom collapse" id="tbl-expand">
+                    <tr class="rw-hdr rw-1">
+                        <th class="tbl-hdr">Name</th>
+                        <th class="tbl-hdr">Model Number</th>
+                        <th class="tbl-hdr">Subsystem</th>
+                        <th class="tbl-hdr">Quantity</th>
+                        <th class="tbl-hdr">Unit Cost (USD)</th>
+                        <th class="tbl-hdr">Documentation Available?</th>
+                    </tr>
+                    <tr class="rw-hdr rw-1">
+                        <td class="tbl-col">TCS3200 Color Sensor Board</td>
+                        <td class="tbl-col">N/A</td>
+                        <td class="tbl-col">Color sensing</td>
+                        <td class="tbl-col">1</td>
+                        <td class="tbl-col">N/A</td>
+                        <td class="tbl-col">Partial</td>
+                    </tr>
+                    <tr class="rw-hdr rw-2">
+                        <td class="tbl-col">IR Sensor</td>
+                        <td class="tbl-col">GP2Y0A41SK0F</td>
+                        <td class="tbl-col">Navigation</td>
+                        <td class="tbl-col">2</td>
+                        <td class="tbl-col">13.95</td>
+                        <td class="tbl-col">Yes</td>
+                    </tr>
+                    <tr class="rw-hdr rw-3">
+                        <td class="tbl-col">Ultrasonic Sensor</td>
+                        <td class="tbl-col">HC-SR04</td>
+                        <td class="tbl-col">Navigation</td>
+                        <td class="tbl-col">1</td>
+                        <td class="tbl-col">3.95</td>
+                        <td class="tbl-col">Yes</td>
+                    </tr>
+                    <tr class="rw-hdr rw-4">
+                        <td class="tbl-col">Motor</td>
+                        <td class="tbl-col">N/A</td>
+                        <td class="tbl-col">Navigation</td>
+                        <td class="tbl-col">2</td>
+                        <td class="tbl-col">N/A</td>
+                        <td class="tbl-col">N/A</td>
+                    </tr>
+                    <tr class="rw-hdr rw-5">
+                        <td class="tbl-col">Servo motor</td>
+                        <td class="tbl-col">31311S</td>
+                        <td class="tbl-col">Ball Grabbing</td>
+                        <td class="tbl-col">1</td>
+                        <td class="tbl-col">N/A</td>
+                        <td class="tbl-col">N/A</td>
+                    </tr>
+                    <tr class="rw-hdr rw-6">
+                        <td class="tbl-col">Arduino Uno</td>
+                        <td class="tbl-col">A000066</td>
+                        <td class="tbl-col">Central processing</td>
+                        <td class="tbl-col">1</td>
+                        <td class="tbl-col">22.00</td>
+                        <td class="tbl-col">Yes</td>
+
+                    </tr>
+                    <tr class="rw-hdr rw-6">
+                        <td class="tbl-col">Adafruit Motor Shield</td>
+                        <td class="tbl-col">1438</td>
+                        <td class="tbl-col">Navigation</td>
+                        <td class="tbl-col">1</td>
+                        <td class="tbl-col">19.95</td>
+                        <td class="tbl-col">Yes</td>
+                    </tr>
+                </table>
+            </div>
+            <p>
+                So how do all of these components fit together? The IR sensors, and the two motors are for the navigation system as well and will also feature control system that will prevent the robot from colliding with the walls. The ultrasonic sensor will be mounted on the front of the robot and will detect walls in front of it as well as the ball at the end of the maze. Speaking of the end of the maze, the servo motor will be responsible for grabbing the ball at the end of the maze and the color sensor will be responsible for detecting the start and end of the maze.
+            </p>
+            
+        </section>
+        
+        <section class="main-section ctr-ovrvw" id="Code_Overview">
+            
+            <header class="sec-hdr">Code Overview</header>
+            <p>
+                For the Arduino code that would eventually tie all of the systems together, a couple of other programs will be necessary to prepare for the final program that will complete the objectives. A calibration program for the IR sensor is definitely required, while programs for testing the color sensor and ultrasonic sensor aren’t strictly necessary (as they’ll be in the final program in some shape or form) but recommended. As for the final program, it can be separated into a couple of distinct subsystems, the corridor navigation sub-routine; the color-sensing sub-routine; and the ball grabbing sub-routine.
+            </p>
+
+
+            <h3 class="sub-hdr">IR Sensor Calibration</h3>
+            
+            <p>
+                The IR sensor calibration is relatively simple but requires a physical rig. The physical rig must be a straight, flat white wall, and must be at a preset distance away from the IR sensor. Similarly, the IR sensor should be mounted in a way so that it is straight and the detectors and emitters are facing the wall. 
+            </p>
+            <p>
+                The white wall requirement is there to ensure that the IR sensor reads a signal that is as close to the output signal as possible. In addition, the wall is meant to be movable as you’ll probably want more than one measurement. Your calibration rig should look similar to the one below and the sensor output characteristics will be below that.
+            </p>
+            
+            <img class="img-xple" src="img/ir-cal-diag.png" alt="IR calibration image">
+            
+               
+            <!-- Media Query is messing with .collapse -->
+            <div class="ctr-cllpse">
+                
+                <button class="btn btn-cllpse" type="button" data-toggle="collapse" data-target="#ir-cal" aria-controls="ir-cal" aria-expanded="false" aria-label="IR calibration curve collapse"><i class="fas fa-angle-double-down"></i> IR Sensor Sample Output Curve <i class="fas fa-angle-double-down"></i></button>
+                
+                <div class="wrp-img">
+                    <img class="img-ircal collapse" src="img/ir-output.png" alt="IR output curve" id="ir-cal">
+                </div>
+                
+            </div>
+            
+            <p>
+                As for the program for the IR sensor calibration, some things should be kept in mind. First, the Arduino reads inputs in bits so we’ll need to convert that to volts (<a href="https://www.arduino.cc/en/Tutorial/ReadAnalogVoltage" alt="Analog voltage conversion doc">the documentation for this is found here</a>). Put in short, the Arduino assigns a value in bits to the corresponding voltage and we need to convert that back to voltage as those units are more meaningful to us than bits. 
+            </p>
+            <p>
+                From there, we need the sensor to send two signals, one low frequency signal and one high frequency signal. The low frequency signal is to make sure that the high frequency signal that is performing the actual reading is as clean as possible. The readings should be recorded and printed live on the console so that you may copy them into a spreadsheet for curve fitting. At its simplest form, with the bare minimum of parts for the test rig, it should look similar to the below pseudocode.
+            </p>
+               
+               
+            <code>
+                initialize rawSens, distFinal,voltConvert; <br>
+                initialize console logging; <br>
+                #define sensorPin; <br>
+                rawSens= analogRead(sensorPin); <br>
+                voltConvert = rawSens * 0.0049; <br>
+                print(“Voltage value:”); <br>
+                print(val); <br>
+                delay(1000); <br>
+            </code>
+            
+            <p class="p-minline">
+                For reference here's how our final voltage to distance function looked like in Arduino, where we fit our data to a 6th power curve (this was overkill by the way, don't do this).
+            </p>
+            
+            <code>
+                int distanceRead(int raw){ <br>
+                float val = 0.0049 * raw;<br>
+                int distance =  39.042 * val^6 - 437.12 * val^5
+                + 1957.3 * val^4 -4473 * val^3 + 5527 * val^2 - 3620.9 * val + 1137.9; <br>
+                return distance;<br>
+                } <br>
+            </code>
+            
+            
+            <h3 class="sub-hdr">Wall Avoidance System</h3>
+
+                <img class="img-pid" src="http://www.texample.net/media/tikz/examples/PNG/control-system-principles.png" alt="PID block diagram">
+            
+            <p>
+                The wall avoidance system is a pretty simple example of a negative feedback control system. A negative feedback system aims to control the output of a system by using the current output of the system to correct the input so that it is closer to the desired output. For example, when you take a shower and the water is too hot, you turn the valve so that the water is cooler. 
+            </p>
+            <p>
+                In the case of the maze solving robot, we want the robot to stay a set distance away from the walls at all times, so we’ll need to  adjust the speed of the two motors in order to accomplish this. Our implementation of this is done in the form of a PID controller (or more specifically a P controller) which computes an error value that will be used to modify the input so that its closer to our desired value. Also note that the below pseudocode assumes you’re only using one IR sensor.
+            </p>
+                   
+            <code>
+                initialize rawLeft, distLeft; <br>
+                initialize speedLeft; <br>
+                initialize targetLeft, relOffset, l, corrFactor; <br>
+                <br>
+                #define motorRight, motorLeft, leftIR; <br>
+                #define convertFunc; // Function for converting sensor voltage to distance <br>
+                <br>
+
+
+                targetLeft = 10; //in mm <br>
+                relOffset = 0; <br>
+                corrFactor = 0; <br>
+                speedLeft = 62; <br>
+                motorRight →setSpeed(62); <br>
+                <br>
+
+                while (l /= 100){ <br>
+                rawLeft = analogRead(leftIR); <br>
+                motorLeft → setSpeed(speedLeft); <br>
+                motorRight, motorLeft → run(FORWARD); <br>
+                millis(50); // run motors for 50ms <br>
+                <br>
+
+                function distanceCalc(rawLeft){ <br>
+                distLeft = rawLeft* 0.0049 * convertFunc; <br>
+                return distLeft; <br>
+                } <br>
+                <br>
+                function errorCalc(distLeft){ <br>
+                relOffset = targetLeft - distLeft; <br>
+                return relOffset; <br>
+                } <br>
+                <br>
+                speedLeft= 62 - corrFactor * relOffset; <br>
+                l ++;  <br>
+                <br>
+                } <br>
+            </code>
+
+                   
+            <h3 class="subhdr">Overall Robot Code Structure</h3>
+            
+                
+                <p>
+                    So the overall structure of the code should probably be using switches as there’s numerous situations that the robot needs to handle. It makes the code easier to read than having some 6 or so if else statements and isolates whatever subroutines you have in your code. In addition, the maze solving algorithm for the robot should be a left-hand wall following algorithm. There are numerous other maze solving algorithms but those are aimed more towards machine learning and mapping, which are outside the scope of the class.
+                </p>
+                
+                <code>
+                    switch(caseVal){ <br>
+                    <br>
+                    case robotInit{} <br>
+                    <br>
+                    case robotDetectColor{} <br>
+                    <br>
+                    case robotForwards{} <br>
+                    <br>
+                    case robotReverse{} <br>
+                    <br>
+                    case robotTurnLeft{} <br>
+                    <br>
+                    case robotGrabBall{} <br>
+                    <br>
+                    } <br>
+                </code>
+                
+                <p class="p-minline">
+                    And below is some pseudocode of how the robot can be initialized.
+                </p>
+                
+                <code>
+                    #define btnPin; <br>
+                    boolean btnStat; <br>
+                    <br>
+                    case robotInit{ <br>
+                    btnStat = false; <br>
+                    serial.begin(9600); <br>
+                    serial.print(“Robot start, waiting for input”); <br>
+                    <br>
+                    while (btnStat = false){ <br>
+                    btnStat = read(btnPin); <br>
+                    <br>
+                    if btnStat = true{ <br>
+                    return caseVal = robotForwards; <br>
+                    } <br>
+                    else{ <br>
+                    continue; <br>
+                    } <br>
+                    } <br>
+                    break; <br>
+                    } <br>
+                </code>
+        </section>
+        
+        <section class="main-section ctr-imp" id="Improvements_and_Fixes">
+            <header class="sec-hdr">Improvements and Fixes</header>
+            <p>
+                This section is dedicated to listing out some of the potential improvements that could be made to our robot. While some of these issues probably won’t show up in your implementation, these are still good things to look out for. <em>Note: This section does not include improvements to any testing procedures.</em>
+            </p>
+            <div class="ctr-flex">
+                <div class="ctr-fix">
+                    <h3 class="sub-hdr">Hardware Fixes</h3>
+                    <p class="p-fix">
+                        The hardware improvements or fixes for our solution to the robot are fairly straightforwards. The biggest one would be to include a voltage regulator between the power supply and the Arduino board along with an indicator LED to notify us when the board isn’t getting enough power. This would ensure that the Arduino operates at a consistent level whenever possible. 
+                    </p>
+                    <p class="p-fix">
+                        After that, it’s a split between two things; having more soldered connections instead, and having everything mounted securely via screws and etc. These improvements would mostly make the robot feel more robust, but would also ensure that the robot components won’t come apart halfway through a run.
+                    </p>
+                </div>
+            
+                <div class="ctr-fix">
+                    <h3 class="sub-hdr">Software Fixes</h3>
+                    <p class="p-fix">
+                        As for software improvements, they’re mostly aimed at readability rather than functionality. It’s probably prudent to say that our implementation of the maze solving robot’s program was probably wrong in several cases. For our robot, I’d remove the exclude the IR sensor on the right side of the robot from the control system; it’s overkill and made the overall program messier.
+                    </p>
+                    <p class="p-fix">
+                        In addition, our program almost definitely needed a while loop for the straight corridor navigation subroutine. Other than that, using camel casing for our variables would be great for readability and having better naming conventions for files would make navigating through them significantly easier than it is now.
+                   </p>
+                    
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="main-section ctr-doc" id="Supporting_Documentation">         
+            <header class="sec-hdr">Supporting Documentation</header>
+            <p class="p-minline">
+                Here is some of the supporting documentation that should help you, should you choose to use some of or all of the components that we used.
+            </p>
+            <ul>
+                <li><a href="https://cdn.sparkfun.com/assets/b/3/0/b/a/DGCH-RED_datasheet.pdf" alt="Ultrasonic docs">Ultrasonic Sensor Datasheet</a></li>         
+                <li><a href="http://sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y0a41sk_e.pdf" alt="IR sensor datasheet">IR Sensor Datasheet</a></li>
+                <li><a href="https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino" alt="Adafruit Motor Shield Docs">Adafruit Motor Shield Documentation</a></li>
+                <li><a href="https://store.arduino.cc/usa/arduino-uno-rev3" alt="Arduino Uno documentation">Arduino Uno Documentation</a></li>
+                <li><a href="https://www.mouser.com/catalog/specsheets/TCS3200-E11.pdf" alt="TCS3200 Chip Documentation">TCS3200 Chip Documentation</a></li>
+                <li><a href="https://www.arduino.cc/en/Guide/ArduinoUno#toc5" alt="Arduino Uno setup">Arduino Uno Setup</a></li>
+            </ul>
+            <p class="minline">In addition, feel free to look at the <a href="https://github.com/wilsonj806/MEC-550-Maze-Solving-Robot">Github Repo</a> of the project for reference.
+            </p>
+        </section>
+    </main>
+    
+<!-- Bootstrap JS plugins, Popper.JS, jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>
