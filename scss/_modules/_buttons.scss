@@ -1,0 +1,32 @@
+/* Button styling */
+
+// General button styling
+
+
+// BoM button styling
+
+.btn-bom{
+    @include sides-zero;
+    background-color:$btn-blue !important;
+    color: white;
+    position:absolute;
+    right:0;
+    width:50px;
+    height:50px;
+    z-index: 2;
+    font-size: 36px !important;
+    padding:0 0;
+    display:flex;
+    align-content: baseline;
+    justify-content: center;
+    box-shadow: 5px 5px 15px $code-grey;
+    
+    @media screen and (min-width:767px){
+            display:none;
+    }
+}
+
+.btn-cllpse{
+    width:100%;
+    border-radius:5px 5px .06px .06px;
+}

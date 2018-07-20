@@ -1,0 +1,118 @@
+/* Viewport SCSS */
+
+@media screen and (min-width:1023px){
+
+/* CSS for reused blocks for this breakpoint or shared styles */
+
+main{
+    background-color:white;
+}
+
+main{
+    margin-left:23%;
+}
+
+p{
+    width:70%;
+}
+
+
+code{
+    width:40%;
+}
+
+ol, .ctr-ul, ul:not(.nav-li){
+    width:40%;
+}
+
+.ctr-intro,.ctr-req,.ctr-bom,.ctr-code,.ctr-imp,.ctr-doc,.ctr-ovrvw{
+    width:100%;
+    border-radius:none;
+    box-shadow: none;
+}
+
+
+/* Section specific CSS for this breakpoint */
+
+nav{
+    height:100vh;
+    width:23%;
+    box-shadow: 3px 0px 10px $code-grey;
+    background-color:$off-white;
+}
+
+
+.ctr-nav{
+    position:fixed;
+    width:23%;
+}
+
+.ctr-nav:not(.show){
+    display:block;
+}
+
+.nav-hdr{
+    border-top:none;
+    padding-top:20px;
+    padding-bottom: 19px;
+    text-shadow: 1px 1px 1px $code-grey;
+}
+
+.nav-wrp{
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left:10px;
+    font-weight: 600;
+    background-color:$off-white;
+}
+
+.nav-wrp:hover{
+    background-color:$l-blue;
+    box-shadow: none;
+}
+
+.nav-hdr{
+    background-color:$prim-blue;
+    color:white;
+}
+
+/* CSS styling for other sections */
+
+.ctr-intro{
+    padding-top:0;
+    padding-bottom:0;
+}
+
+
+.ctr-cllpse{
+    width:50%;
+}
+
+.ctr-flex{
+    @include center-mar;
+    display:flex;
+    flex-flow:row nowrap;
+}
+
+.p-fix{
+    width:85%;
+}
+
+}
+
+@media print{
+
+nav{
+    display:none;
+}
+
+main{
+    width:100%;
+}
+
+.btn-bom{
+    display:none;
+}
+
+
+}

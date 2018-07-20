@@ -1,0 +1,52 @@
+/* Tables CSS */
+
+/* For the pop in table */
+
+table{
+    z-index: 1;
+    transform: rotate(90deg);
+    background-color:white;
+    position:relative;
+    right: 30%;
+    font-size:14px;
+    width:600px;
+    border:1px solid $grey;
+    border-right:none;
+    border-bottom: none;
+        
+    // play with flex properties to get the stupid thing centered?
+    // Maybe figure out how to make the table responsively sizeable
+    // Easy solution would be to use JS to make the table visible
+    // Or try putting the table in a wrapper that's centered
+    // Make the table visible on tablets without the button as well    
+}
+
+tr{
+    border-bottom:1px solid $grey;
+}
+
+th,td{
+    border-right:1px solid $grey;
+}
+
+@media screen and (min-width:767px){
+    table{
+    position:static;
+    @include center-mar;
+    transform: rotate(0deg);
+    }
+    .tbl-bom:not(.show){
+    display:block;
+}
+    
+    @media print{
+        position:static;
+        @include center-mar;
+        transform: rotate(0deg);
+    }
+    
+}
+
+.tbl-hdr,td{
+    width:150px;
+}

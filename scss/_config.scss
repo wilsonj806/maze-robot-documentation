@@ -1,0 +1,94 @@
+/* _Config CSS */
+
+//  This file includes base styling for paragraph elements, div elements, heading elements and etc. It will also include base colors from the selected palette. 
+// In addition this file will include some common mixins that will be reused throughout the page.
+// Note that any sizing done in this .scss file is sized for medium phone screens (375px) by default
+
+// Colors
+
+$btn-blue: #4A88CB; //for buttons
+$prim-blue:#3E87D5; // for header elements
+$l-grey:#E6E6E6; // Mobile background color
+$code-grey:#C4C4C4; // code block back
+$grey:#8F8F90; // borders/ inset div
+$font-blue:#185BA4; //code block color
+$l-blue:#E0EEFE; // :hover
+$hov-grey:#F1F1F1; // :hover for mobile
+$off-white:#F8F8F8; // Nav links on larger screens
+
+// Mixins
+
+@mixin center-mar{
+    margin-right:auto;
+    margin-left:auto;
+}
+
+@mixin sides-zero{
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+@mixin blank-list{
+    list-style-type: none;
+    padding-left:0px;
+}
+
+
+/* Standard Elements Styling */
+
+main{
+    background-color:$l-grey;
+}
+
+h1,h2,h3,h4,header{
+    @include center-mar;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+    width:90%;
+}
+header{
+    font-size:36px;
+    font-weight: 600;
+}
+
+p{
+    width:90%;
+    @include center-mar;
+    text-indent: 35px;
+    padding:15px 0;
+}
+
+.p-minline{
+    text-align: center;
+    text-indent:0px;
+}
+
+code{
+    @include center-mar;
+    background-color: $code-grey;
+    color:$font-blue;
+    width:75%;
+    display:block;
+    padding:30px 20px;
+}
+
+ol, .ctr-ul, ul:not(.nav-li){
+    @include center-mar;
+    width:85%;
+    padding-left: 20px;
+}
+
+li{
+    margin-bottom: 12px;
+}
+
+img{
+    margin-top:20px;
+    margin-bottom:20px;
+    display:flex;
+    max-width:85%;
+    @include center-mar;
+}

@@ -1,0 +1,297 @@
+/* Main SCSS/ CSS file */
+/* _Config CSS */
+/* Standard Elements Styling */
+main {
+  background-color: #E6E6E6; }
+
+h1, h2, h3, h4, header {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 90%; }
+
+header {
+  font-size: 36px;
+  font-weight: 600; }
+
+p {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  text-indent: 35px;
+  padding: 15px 0; }
+
+.p-minline {
+  text-align: center;
+  text-indent: 0px; }
+
+code {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #C4C4C4;
+  color: #185BA4;
+  width: 75%;
+  display: block;
+  padding: 30px 20px; }
+
+ol, .ctr-ul, ul:not(.nav-li) {
+  margin-right: auto;
+  margin-left: auto;
+  width: 85%;
+  padding-left: 20px; }
+
+li {
+  margin-bottom: 12px; }
+
+img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  max-width: 85%;
+  margin-right: auto;
+  margin-left: auto; }
+
+/* Content SCSS */
+/* Section container styling */
+.ctr-intro, .ctr-req, .ctr-bom, .ctr-code, .ctr-imp, .ctr-doc, .ctr-ovrvw {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 5px 5px 10px #C4C4C4; }
+
+.ctr-bom {
+  margin-bottom: -20px; }
+
+.ctr-ovrvw {
+  padding-bottom: 40px;
+  margin-bottom: 20px; }
+
+/* Nav specific styling */
+nav {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  box-shadow: 3px 0px 10px #C4C4C4; }
+
+.ctr-nav {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  background-color: white !important;
+  padding-bottom: 0;
+  padding-top: 0; }
+
+.nav-hdr {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  border-bottom: 1px solid #8F8F90;
+  border-top: 1px solid #E6E6E6;
+  font-size: 24px;
+  background-color: inherit;
+  width: 100%;
+  padding-top: 9px;
+  padding-bottom: 9px; }
+
+.nav-li {
+  list-style-type: none;
+  padding-left: 0px;
+  background-color: inherit;
+  margin-bottom: 0;
+  width: 100%; }
+
+.nav-wrp {
+  border-bottom: 1px solid #8F8F90;
+  margin-bottom: 0; }
+
+.nav-link {
+  color: black; }
+
+.nav-wrp:hover {
+  background-color: #F1F1F1;
+  box-shadow: 5px 5px 8px inset #C4C4C4, -5px -5px 8px inset #C4C4C4; }
+
+.nav-link:hover {
+  color: black; }
+
+/* Section styling and layouts */
+.ctr-intro {
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 16px; }
+
+.img-intro {
+  margin-top: 50px;
+  max-width: 85%;
+  height: 250px; }
+
+.ctr-ul {
+  list-style-type: none; }
+
+.ctr-cllpse {
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid #8F8F90;
+  box-shadow: 5px 5px 10px #C4C4C4; }
+
+/* Tables CSS */
+/* For the pop in table */
+table {
+  z-index: 1;
+  transform: rotate(90deg);
+  background-color: white;
+  position: relative;
+  right: 30%;
+  font-size: 14px;
+  width: 600px;
+  border: 1px solid #8F8F90;
+  border-right: none;
+  border-bottom: none; }
+
+tr {
+  border-bottom: 1px solid #8F8F90; }
+
+th, td {
+  border-right: 1px solid #8F8F90; }
+
+@media screen and (min-width: 767px) {
+  table {
+    position: static;
+    margin-right: auto;
+    margin-left: auto;
+    transform: rotate(0deg); }
+
+  .tbl-bom:not(.show) {
+    display: block; } }
+.tbl-hdr, td {
+  width: 150px; }
+
+/* Button styling */
+.btn-bom {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  background-color: #4A88CB !important;
+  color: white;
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  font-size: 36px !important;
+  padding: 0 0;
+  display: flex;
+  align-content: baseline;
+  justify-content: center;
+  box-shadow: 5px 5px 15px #C4C4C4; }
+  @media screen and (min-width: 767px) {
+    .btn-bom {
+      display: none; } }
+
+.btn-cllpse {
+  width: 100%;
+  border-radius: 5px 5px .06px .06px; }
+
+/* Viewport SCSS */
+@media screen and (min-width: 1023px) {
+  /* CSS for reused blocks for this breakpoint or shared styles */
+  main {
+    background-color: white; }
+
+  main {
+    margin-left: 23%; }
+
+  p {
+    width: 70%; }
+
+  code {
+    width: 40%; }
+
+  ol, .ctr-ul, ul:not(.nav-li) {
+    width: 40%; }
+
+  .ctr-intro, .ctr-req, .ctr-bom, .ctr-code, .ctr-imp, .ctr-doc, .ctr-ovrvw {
+    width: 100%;
+    border-radius: none;
+    box-shadow: none; }
+
+  /* Section specific CSS for this breakpoint */
+  nav {
+    height: 100vh;
+    width: 23%;
+    box-shadow: 3px 0px 10px #C4C4C4;
+    background-color: #F8F8F8; }
+
+  .ctr-nav {
+    position: fixed;
+    width: 23%; }
+
+  .ctr-nav:not(.show) {
+    display: block; }
+
+  .nav-hdr {
+    border-top: none;
+    padding-top: 20px;
+    padding-bottom: 19px;
+    text-shadow: 1px 1px 1px #C4C4C4; }
+
+  .nav-wrp {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-weight: 600;
+    background-color: #F8F8F8; }
+
+  .nav-wrp:hover {
+    background-color: #E0EEFE;
+    box-shadow: none; }
+
+  .nav-hdr {
+    background-color: #3E87D5;
+    color: white; }
+
+  /* CSS styling for other sections */
+  .ctr-intro {
+    padding-top: 0;
+    padding-bottom: 0; }
+
+  .ctr-cllpse {
+    width: 50%; }
+
+  .ctr-flex {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-flow: row nowrap; }
+
+  .p-fix {
+    width: 85%; } }
+@media print {
+  nav {
+    display: none; }
+
+  main {
+    width: 100%; }
+
+  .btn-bom {
+    display: none; } }
+
+/*# sourceMappingURL=main.css.map */

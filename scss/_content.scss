@@ -1,0 +1,109 @@
+/* Content SCSS */
+
+/* Section container styling */
+
+.ctr-intro,.ctr-req,.ctr-bom,.ctr-code,.ctr-imp,.ctr-doc,.ctr-ovrvw{
+    @include sides-zero;
+    width:95%;
+    @include center-mar;
+    background-color:white;
+    border-radius:3px;
+    box-shadow: 5px 5px 10px $code-grey;
+}
+
+.ctr-bom{
+    margin-bottom:-20px;
+}
+
+.ctr-ovrvw{
+    padding-bottom:40px;
+    margin-bottom:20px;
+}
+/* Nav specific styling */
+
+nav{
+    background-color:white;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;    
+    z-index:4;
+    box-shadow: 3px 0px 10px $code-grey;
+}
+
+.ctr-nav{
+    @include sides-zero;
+    background-color:white !important;
+    padding-bottom: 0;
+    padding-top:0;
+}
+
+.nav-hdr{
+    @include sides-zero;
+    border-bottom: 1px solid $grey;
+    border-top: 1px solid $l-grey;
+    font-size: 24px;
+    background-color:inherit;
+    width:100%;
+    padding-top:9px;
+    padding-bottom: 9px;
+}
+
+.nav-li{
+    @include blank-list;
+    background-color:inherit;
+    margin-bottom: 0;
+    width:100%;
+}
+
+.nav-wrp{
+    border-bottom: 1px solid $grey;
+    margin-bottom: 0;
+}
+
+.nav-link{
+    color:black;
+}
+
+.nav-wrp:hover{
+    background-color:$hov-grey;
+    box-shadow: 5px 5px 8px inset $code-grey,-5px -5px 8px inset $code-grey;
+}
+
+.nav-link:hover{
+    color:black;
+}
+
+/* Section styling and layouts */
+
+.ctr-intro{
+    margin-top:30px;
+    @include center-mar;
+    padding-bottom:16px;
+}
+
+.wrp-img{
+
+}
+
+
+.img-intro{
+    margin-top:50px;
+    max-width:85%;
+    height:250px;
+}
+
+.ctr-ul{
+    list-style-type: none;
+}
+
+
+.ctr-cllpse{
+    @include center-mar;
+    width:95%;
+    border-radius:5px;
+    background-color:white;
+    border:1px solid $grey;
+    box-shadow: 5px 5px 10px $code-grey;
+}
+
