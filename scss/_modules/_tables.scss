@@ -5,15 +5,15 @@
 table{
     z-index: 1;
     transform: rotate(90deg);
-    background-color:white;
+    background-color:$l-grey;
     position:relative;
-    right: 30%;
+    right: 45%;
     font-size:14px;
-    width:600px;
-    border:1px solid $grey;
-    border-right:none;
-    border-bottom: none;
-        
+    width:720px;
+    border:1px solid $hov-grey;
+    border-radius:5px;
+    box-shadow: 8px 8px 15px $code-grey;
+    border-bottom:none;
     // play with flex properties to get the stupid thing centered?
     // Maybe figure out how to make the table responsively sizeable
     // Easy solution would be to use JS to make the table visible
@@ -21,12 +21,16 @@ table{
     // Make the table visible on tablets without the button as well    
 }
 
-tr{
+tr:not(.rw-7){
     border-bottom:1px solid $grey;
 }
 
-th,td{
-    border-right:1px solid $grey;
+.rw-even{
+    background-color:$off-white;
+}
+
+th{
+    background-color:$off-white;
 }
 
 @media screen and (min-width:767px){
@@ -34,6 +38,7 @@ th,td{
     position:static;
     @include center-mar;
     transform: rotate(0deg);
+    box-shadow: 5px 5px 15px $code-grey;
     }
     .tbl-bom:not(.show){
     display:block;
